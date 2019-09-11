@@ -1,13 +1,41 @@
+import golosinas.*
+
 object mariano {
-	// para este objeto no damos pistas
-	// definimos algunos métodos para que compile el test
-	
-	method comprar(golosina) { /* completar */ }
+	var golosinas = []
+	 
+	method comprar(golosina) {
+		 golosinas.add(golosina)
+	}
 	method golosinas() {
-		/* cambiar por la implementacion correcta */ 
-		return [] 
+		return golosinas 
 	}
 	
-	method probarGolosinas() { /* completar */ }
+	method hayGolosinaSinTACC() {
+		return golosinas.any({ golosina => golosina.libreGluten() })
+	}
+	
+	method probarGolosinas() { 
+		/* completar */ 
+	}
+	
+	method pesoGolosinas() {
+		// suma total **del peso** de cada golosina
+		// puedo usar sum con una función
+		return golosinas.sum({ golosina => golosina.peso() })
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
